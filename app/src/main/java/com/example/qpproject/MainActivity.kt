@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var button1:Button
     private lateinit var textView2:TextView
     private lateinit var button2:Button
+    private lateinit var SettingsBtn:Button;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         textView2.text = "Hello World"
         textBox2.text = "Power Tag"
         button2.text = "Current Location"
-
+        SettingsBtn.text = "Settings"
     }
 
     private fun wireWidgets() {
@@ -33,5 +34,6 @@ class MainActivity : AppCompatActivity() {
         textView2 = findViewById(R.id.textView2)
         textBox2 = findViewById(R.id.textView1)
         button2 = findViewById(R.id.buttonCurr)
+        SettingsBtn = findViewById(R.id.SettingsBtn)
     }
 }
