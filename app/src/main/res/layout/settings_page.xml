@@ -10,11 +10,11 @@
         android:id="@+id/SettingsText1"
         android:layout_width="124dp"
         android:layout_height="31dp"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="48dp"
         android:text="USER ID: "
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="77dp" />
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/HomeButton1"
