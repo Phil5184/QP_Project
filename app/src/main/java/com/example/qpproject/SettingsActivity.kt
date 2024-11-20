@@ -20,6 +20,7 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var darkMode:Switch
     private lateinit var About:TextView
     private lateinit var AboutText:TextView
+    var isDark:Boolean = false
 
 
 
@@ -46,10 +47,16 @@ class SettingsActivity : AppCompatActivity() {
 
         homeButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("DarkMode", isDark)
             startActivity(intent)
 
         }
-        if (darkMode.isChecked) {
+
+        val intent = intent
+        isDark = intent.getBooleanExtra("Dark", false)
+
+        if (isDark) {
+            darkMode.isChecked = true
             background.setBackgroundColor(Color.DKGRAY)
             settingsTxt.setTextColor(Color.WHITE)
             darkMode.setTextColor(Color.WHITE)
@@ -57,6 +64,7 @@ class SettingsActivity : AppCompatActivity() {
             AboutText.setTextColor(Color.WHITE)
         }
         else {
+            darkMode.isChecked = false
             background.setBackgroundColor(Color.WHITE)
             settingsTxt.setTextColor(Color.BLACK)
             darkMode.setTextColor(Color.BLACK)
@@ -66,12 +74,14 @@ class SettingsActivity : AppCompatActivity() {
 
         darkMode.setOnCheckedChangeListener { darkMode, isChecked ->
             if (isChecked) {
+                isDark = true;
                 background.setBackgroundColor(Color.DKGRAY)
                 settingsTxt.setTextColor(Color.WHITE)
                 darkMode.setTextColor(Color.WHITE)
                 About.setTextColor(Color.WHITE)
                 AboutText.setTextColor(Color.WHITE)
             } else {
+                isDark = false;
                 background.setBackgroundColor(Color.WHITE)
                 settingsTxt.setTextColor(Color.BLACK)
                 darkMode.setTextColor(Color.BLACK)
